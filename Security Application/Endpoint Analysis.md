@@ -1,0 +1,13 @@
+# Endpoint Analysis
+---
+- ## Anti-virus (AV)
+	- remove malware software
+- ## IDS/IPS (HIDS/HIPS)
+	- log traffic and prevent threats
+- ## Endpoint Protection Platform (EPP)
+	- perform multiple security tasks. Mostly based on signature detection.
+- ## Endpoint Detection and Response (EDR)
+	- collect system data logs 
+- ## User and Entity Behavior Analytics (UEBA)
+	- is compassing base line data from analytics to the host activity. Usually, it's using AI to do it
+	- e.g. Microsoft Advanced Threat Analytics, Splunk User Behavior Analytics
