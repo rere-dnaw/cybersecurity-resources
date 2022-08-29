@@ -1,3 +1,4 @@
+
 # Three
 ---
 I had to use:
@@ -6,3 +7,4 @@ I had to use:
 - gobuster
 - connect to s3 aws bucket
 - send php-reverse-shell.php to s3 bucket 
+- then used nc -v
