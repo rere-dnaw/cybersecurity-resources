@@ -14,4 +14,7 @@
 
 
 ## HSM (Hardware Security Module)
-Physical device which acts as cryptoprocessor during the encryption process.  
+Physical device which acts as cryptoprocessor during the encryption process. Commonly PCI extension module.
+
+
+#TPM #HSM
