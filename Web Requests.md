@@ -60,7 +60,7 @@ URL is more than only the website which we want to visit.
 | PATCH | The method applies partial modifications to a resource. |
 
 
-## Response Code
+## Response Codehttp://206.189.117.48:30549/
 | Type    |  Description |
 |:--------------:|:-----------:|
 | 1xx | Provides info doesn't affect the request processing. |
