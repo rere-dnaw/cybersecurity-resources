@@ -29,7 +29,7 @@ pip list --outdated
 ```
 
 # Naming convention
-| **Type**    |  **Public** |  **Internal** |
+| **Type**    |  **Public** |  **Internal/Private** |
 |:--------------|:-----------|:-----------|
 | Packages | `lower_with_under` ||
 | Modules | `lower_with_under` |`_lower_with_under`|
@@ -44,7 +44,8 @@ pip list --outdated
 | Local Variables | `lower_with_under` ||
 
 # Quick
-- use contex manager when managing resources
+- `isinstance` is less bad than checking identity of `type`s because it seamlessly supports inheritance. 
+- variable `__name__` takes value `__main__` for file from which you launch the program but it takes name for the import path for other files
 #### e.g
 ```python
 with open(text.txt, 'r') as f:
@@ -191,4 +192,75 @@ vector1 = {'x': 2, 'y':4, 'z':2}
 
 print(calc_unit_vector(**vector1))
 # {'x': 0.4082482904638631, 'y': 0.8164965809277261, 'z': 0.4082482904638631}
+```
+- example class plus different methods
+```python
+class Student:
+	COURSES = ["Nursing", "Mathematics", "Computer Science"] # property
+
+	def __init__(self, name, course, grades):
+		self.name = name
+		self.course = course
+		self.grades = grades
+
+	#dunder method (magic method)
+	def __str__(self):
+		return "name: {0}, course: {1}, grades: {2}".format(self.name, 
+															self.course,
+															self.grades)
+
+	def __repr__(self):
+		return "<Student({0},{1},{2})>".format(self.name,
+												self.course,
+												self.grades)
+
+	def average(self):
+			collection_type = (list, tuple, set)
+		
+		if type(self.grades) in collection_type:
+			if len(self.grades) != 0:
+				return sum(self.grades)/len(self.grades)
+		else:
+			print('Grades must be collection type data!')
+		return None
+
+	@classmethod	
+	def add_student_nurs(cls, name, grades):
+		return cls(name, cls.COURSES[0], grades)
+	
+	@classmethod
+	def add_student_math(cls, name, grades):
+		return cls(name, cls.COURSES[1], grades)
+	
+	@classmethod
+	def add_student_compscien(cls, name, grades):
+		return cls(name, cls.COURSES[2], grades)
+
+student1 = Student.add_student_compscien('Bob', [4,3,5])
+student2 = Student.add_student_math('Tom', [4,5,3,5])
+
+print(student1)
+print(student1.average())
+print(student1.__repr__())
+
+print(student2)
+print(student2.average())
+print(student2.__repr__())
+```
+-  decorators. Useful for privileges 
+```python
+def f1(func_as_para):
+	print("Inside function 'f1'")
+	def wrapper():
+		print("Inside 'wrapper'")
+		func_as_para()
+		print("Passed function executed. Function 'wrapper' end.")
+	print("End function 'f1'")
+	return wrapper
+
+@f1
+def my_func():
+	print("I'm function as parameter")
+
+my_func() # when decorator added "@f1", python is calling f1(my_func)()
 ```
