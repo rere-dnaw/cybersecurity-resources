@@ -63,8 +63,8 @@ Software development and information technology operation.
 - ### relay on trusted SDK's (Software Development Kit)
 	- make sure that used library are reliable  
 
-## Testing Methods:
 
+## Testing Methods:
 - ### System Testing
 	- #### black box testing
 		- tester knows **nothing** about the program or system before starting test 
